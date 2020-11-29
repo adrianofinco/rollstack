@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/adrianofinco/crops#readme",
   "devDependencies": {
+    "ava": "^3.13.0",
     "xo": "^0.35.0"
   }
 }
