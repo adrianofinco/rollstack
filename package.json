@@ -1,0 +1,29 @@
+{
+  "name": "crops",
+  "version": "0.0.0",
+  "description": "A random seed generator library made in Javascript",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "lint": "xo",
+    "fix": "xo --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianofinco/crops.git"
+  },
+  "keywords": [
+    "seed-generator",
+    "random-string",
+    "random-generator"
+  ],
+  "author": "Adriano Lourenço",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrianofinco/crops/issues"
+  },
+  "homepage": "https://github.com/adrianofinco/crops#readme",
+  "devDependencies": {
+    "xo": "^0.35.0"
+  }
+}
