@@ -1,4 +1,9 @@
-const crops = (function () {
+/*!
+ * rollstack.js v1.0.0
+ * (c) 2020-2020 Adriano Lourenço
+ * Released under the MIT License.
+ */
+var rollstack = (function () {
   const InitialSeeds = (function () {
     const constants = {
       PHI: 0x243F6A88,
@@ -94,7 +99,7 @@ const crops = (function () {
 })()
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = crops
+  module.exports = rollstack
 } else if (typeof window !== 'undefined') {
-  window.crops = crops
+  window.rollstack = rollstack
 }

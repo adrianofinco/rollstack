@@ -11,5 +11,6 @@ export function randomNumber(min: number, max: number): number
 /**
  * Returns a random string with specified length
  * @param length String length
+ * @param charset Defines the character set to be used, default: a...z0...9
  */
-export function randomString(length: number): string
+export function randomString(length: number, charset?: string[] | string): string
