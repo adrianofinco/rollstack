@@ -1,0 +1,44 @@
+{
+  "name": "rollstack",
+  "version": "1.0.0",
+  "description": "A isomorphic javascript library for generating random data (including seeds, numbers and strings)",
+  "main": "src/rollstack.js",
+  "browser": "src/rollstack.min.js",
+  "jsdelivr": "src/rollstack.min.js",
+  "unpkg": "src/rollstack.min.js",
+  "files": [
+    "src/rollstack.js",
+    "src/rollstack.min.js",
+    "src/rollstack.d.ts",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "typings": "src/rollstack.d.ts",
+  "scripts": {
+    "test": "xo && ava",
+    "build": "uglifyjs src/rollstack.js --comments=/^!/ --mangle --compress -o src/rollstack.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianofinco/rollstack.git"
+  },
+  "keywords": [
+    "seed-generator",
+    "random-string",
+    "random-generator",
+    "random-number",
+    "isomorphic"
+  ],
+  "author": "Adriano Lourenço",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrianofinco/rollstack/issues"
+  },
+  "homepage": "https://github.com/adrianofinco/rollstack#readme",
+  "devDependencies": {
+    "ava": "^3.13.0",
+    "uglify-es": "^3.3.9",
+    "xo": "^0.35.0"
+  }
+}
