@@ -1,5 +1,5 @@
 const test = require('ava')
-const { generateSeed, randomNumber, randomString } = require('../src/index')
+const { generateSeed, randomNumber, randomString } = require('../src/rollstack')
 
 test('#generateSeed must always be return a number between 0 and 1', t => {
   for (i = 0; i < 10000; i++) {
