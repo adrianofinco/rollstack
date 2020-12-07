@@ -1,6 +1,6 @@
 {
   "name": "rollstack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A isomorphic javascript library for generating random data (including seeds, numbers and strings)",
   "main": "src/rollstack.js",
   "browser": "src/rollstack.min.js",
