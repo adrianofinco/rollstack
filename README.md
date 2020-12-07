@@ -2,8 +2,8 @@
 A isomorphic javascript library for generating random data (including seeds, numbers and strings)
 
 [![License](https://img.shields.io/github/license/adrianofinco/rollstack)](LICENSE)
-[![Version](https://img.shields.io/npm/v/rollstack)](https://www.npmjs.com/package/usernamecheck)
-[![Bundle size](https://img.shields.io/bundlephobia/minzip/rollstack)](https://www.npmjs.com/package/usernamecheck)
+[![Version](https://img.shields.io/npm/v/rollstack)](https://www.npmjs.com/package/rollstack)
+[![Bundle size](https://img.shields.io/bundlephobia/minzip/rollstack)](https://www.npmjs.com/package/rollstack)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![Ava testing framework](https://img.shields.io/badge/Testing-AVA-4B0082.svg)](https://github.com/avajs/ava)
 
