@@ -64,7 +64,17 @@ var rollstack = (function () {
     }
   })()
 
-  const randomNumber = function (min, max) {
+  const randomNumber = function (min = 1, max = 10) {
+    min = Number(min)
+    max = Number(max)
+    if (Number.isNaN(min) || Number.isNaN(max)) {
+      throw new TypeError('Parameters should be number')
+    }
+
+    if (min > max) {
+      [min, max] = [max, min]
+    }
+
     return Math.floor(generateSeed() * (max - min + 1)) + min
   }
 
