@@ -1,4 +1,4 @@
-export type charsetName = 'alphabet' | 'number' | 'hex' | 'alphanum' | 'base64'
+declare type charsetName = 'alphabet' | 'number' | 'hex' | 'alphanum' | 'base64'
 
 declare const rollstack: {
   /**
@@ -14,7 +14,7 @@ declare const rollstack: {
   /**
    * Returns a random string with specified length
    * @param length String length
-   * @param charset Defines the character set to be used, default: 'alphanumeric'
+   * @param charset Defines the character set to be used, default: 'alphanum'
    */
   randomString(length: number, charset?: charsetName | string[]): string;
 }
