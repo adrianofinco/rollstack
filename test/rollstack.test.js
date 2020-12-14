@@ -26,4 +26,40 @@ test('#randomString should return a string with specified length', t => {
   t.is(randomString(size).length, size)
 })
 
+function testRandomStringCharset(set, compare) {
+  let regex = new RegExp(`^[${compare}]+$`);
+  return regex.test(randomString(1000, set))
+}
+
+test('#randomString return should contain only chars in the set [alphabet]', t => {
+  t.true(testRandomStringCharset('alphabet', 'abcdefghijklmnopqrstuvwxyz'));
+})
+
+test('#randomString return should contain only chars in the set [number]', t => {
+  t.true(testRandomStringCharset('number', '0123456789'))
+})
+
+test('#randomString return should contain only chars in the set [hex]', t => {
+  t.true(testRandomStringCharset('hex', '0123456789abcdef'))
+})
+
+test('#randomString return should contain only chars in the set [base64]', t => {
+  t.true(testRandomStringCharset('base64', 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'))
+})
+
+test('#randomString return should contain only chars in the set [alphanum]', t => {
+  t.true(testRandomStringCharset('alphanum', '0123456789abcdefghijklmnopqrstuvwxyz'))
+})
+
+test('#randomString return should contain only chars in the set [custom]', t => {
+  t.true(testRandomStringCharset(['aBçOI23'], 'aBçOI23'))
+})
+
+test('#randomString should throw an error with invalid charset name', t => {
+  t.throws(() => {
+    randomString(10, 'ascii')
+  }, {
+    message: 'Unknown charset name'
+  })
+})
 
