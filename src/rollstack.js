@@ -70,10 +70,30 @@ var rollstack = (function () {
 
   const randomString = function (length, charset) {
     let cset
-    if (Array.isArray(charset)) {
+    if (typeof charset === 'string') { // Predefined charset
+      switch (charset) {
+        case 'alphabet':
+          cset = 'abcdefghijklmnopqrstuvwxyz'
+          break
+        case 'number':
+          cset = '0123456789'
+          break
+        case 'hex':
+          cset = '0123456789abcdef'
+          break
+        case 'base64':
+          cset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+          break
+        case 'alphanum':
+          cset = '0123456789abcdefghijklmnopqrstuvwxyz'
+          break
+        default:
+          throw new Error('Unknown charset name')
+      }
+    } else if (Array.isArray(charset)) { // Custom charset
       cset = charset.join('')
-    } else if (typeof charset !== 'string') {
-      cset = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    } else { // Default charset
+      cset = '0123456789abcdefghijklmnopqrstuvwxyz'
     }
 
     let max = cset.length - 1
