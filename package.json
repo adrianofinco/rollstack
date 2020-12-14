@@ -1,6 +1,6 @@
 {
   "name": "rollstack",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A isomorphic javascript library for generating random data (including seeds, numbers and strings)",
   "main": "src/rollstack.js",
   "browser": "src/rollstack.min.js",
@@ -17,7 +17,8 @@
   "typings": "src/rollstack.d.ts",
   "scripts": {
     "test": "xo && ava",
-    "build": "uglifyjs src/rollstack.js --comments=/^!/ --mangle --compress -o src/rollstack.min.js"
+    "build": "uglifyjs src/rollstack.js --comments=/^!/ --mangle --compress -o src/rollstack.min.js",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",

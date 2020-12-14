@@ -1,5 +1,5 @@
 /*!
- * rollstack.js v1.0.0
+ * rollstack.js v2.0.0
  * (c) 2020-2020 Adriano Lourenço
  * Released under the MIT License.
  */
@@ -64,16 +64,52 @@ var rollstack = (function () {
     }
   })()
 
-  const randomNumber = function (min, max) {
+  const randomNumber = function (min = 1, max = 10) {
+    min = Number(min)
+    max = Number(max)
+    if (Number.isNaN(min) || Number.isNaN(max)) {
+      throw new TypeError('Parameters must be numbers')
+    }
+
+    if (min > max) {
+      [min, max] = [max, min]
+    }
+
     return Math.floor(generateSeed() * (max - min + 1)) + min
   }
 
   const randomString = function (length, charset) {
     let cset
-    if (Array.isArray(charset)) {
+    if (typeof charset === 'string') { // Predefined charset
+      switch (charset) {
+        case 'alphabet':
+          cset = 'abcdefghijklmnopqrstuvwxyz'
+          break
+        case 'number':
+          cset = '0123456789'
+          break
+        case 'hex':
+          cset = '0123456789abcdef'
+          break
+        case 'base64':
+          cset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+          break
+        case 'alphanum':
+          cset = '0123456789abcdefghijklmnopqrstuvwxyz'
+          break
+        default:
+          throw new Error('Unknown charset name')
+      }
+    } else if (Array.isArray(charset)) { // Custom charset
       cset = charset.join('')
-    } else if (typeof charset !== 'string') {
-      cset = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    } else { // Default charset
+      cset = '0123456789abcdefghijklmnopqrstuvwxyz'
+    }
+
+    if (length <= 0 || cset.length === 0) {
+      /// length < 0 ->> Infinite loop
+      /// length > 0 && charset.length == 0 ->> string full of undefined's
+      return ''
     }
 
     let max = cset.length - 1
