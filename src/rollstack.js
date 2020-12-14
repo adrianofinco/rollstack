@@ -1,5 +1,5 @@
 /*!
- * rollstack.js v1.0.0
+ * rollstack.js v2.0.0
  * (c) 2020-2020 Adriano Lourenço
  * Released under the MIT License.
  */
@@ -68,7 +68,7 @@ var rollstack = (function () {
     min = Number(min)
     max = Number(max)
     if (Number.isNaN(min) || Number.isNaN(max)) {
-      throw new TypeError('Parameters should be number')
+      throw new TypeError('Parameters must be numbers')
     }
 
     if (min > max) {
