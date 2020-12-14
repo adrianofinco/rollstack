@@ -96,6 +96,12 @@ var rollstack = (function () {
       cset = '0123456789abcdefghijklmnopqrstuvwxyz'
     }
 
+    if (length <= 0 || cset.length === 0) {
+      /// length < 0 ->> Infinite loop
+      /// length > 0 && charset.length == 0 ->> string full of undefined's
+      return ''
+    }
+
     let max = cset.length - 1
     let string = ''
 
